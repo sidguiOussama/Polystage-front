@@ -1,0 +1,12 @@
+<div class="">
+  <div class="">
+    <h1>Add Mark</h1>
+  </div>
+  <label>Note</label>
+  <input type="number" min="0" max="20" class="form-control" [(ngModel)]="note"/>
+
+  <div class="mt-5">
+    <button type="submit" class="btn btn-outline-danger pull-right" (click)="onNoClick()">Cancel</button>
+    <button type="submit" class="btn btn-outline-success pull-right" style="margin-left: 1%;" (click)="onclick()">Confirm</button>
+  </div>
+</div>

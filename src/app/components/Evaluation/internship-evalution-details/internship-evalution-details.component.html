@@ -1,0 +1,66 @@
+<div class="mt-5">
+    <div class="container">
+      <div class="mt-5 rounded bg-white p-5 shadow" *ngIf="file!=null">
+        <button class="btn btn-success"  (click)="download()">Dowload Report</button>
+      </div>
+      <div class="mt-5 rounded bg-white p-5 shadow">
+        <div class="d-flex justify-content-start"><h1>Teacher Section</h1></div>
+        <div class="d-flex justify-content-end" *ngIf="currentUser.role=='Teacher'">
+          <button class="btn btn-dark" (click)="addMarkTeacher()" *ngIf="!checkIfTeacherAlreadyAddMark()">Add Mark</button> &nbsp;
+        </div>
+        <hr/>
+
+        <table class="table table-hover bg-white mt-3">
+          <thead class="text-white">
+            <tr class="bg-primary">
+              <th>Teacher Name</th>
+              <th>Mark</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let teacher of teachers">
+              <td>{{teacher.firstname}} {{teacher.lastname}}</td>
+              <td>{{teacher.teacher_evaluation.score}} /20</td>
+              <td class="d-flex justify-content-end">
+                <div  *ngIf="currentUser.role=='Teacher' && teacher.id == currentUser.id">
+                  <button class="btn btn-outline-danger" (click)="deleteEvalution(teacher.id)">Delete</button> &nbsp;&nbsp;
+                  <button class="btn btn-outline-primary" (click)="editMarkTeacher(teacher.teacher_evaluation.score)">Update</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="mt-3 rounded bg-white p-5 shadow">
+        <h1 class=" d-flex justify-content-start">Tutor Section</h1>
+        <hr/>
+
+        <table class="table table-hover bg-white mt-3">
+          <thead>
+            <tr class="bg-danger">
+              <th>Tutor Name</th>
+              <th>Mark</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{tutor.firstname}} {{tutor.lastname}}</td>
+              <td>{{evaluation.tutorScore}}</td>
+              <td class="d-flex justify-content-end">
+                <div *ngIf="currentUser.role=='Tutor'">
+                  <button class="btn btn-outline-primary" (click)="editMarkTutor()">Update</button>
+                </div>
+
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+</div>

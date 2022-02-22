@@ -1,0 +1,38 @@
+<div class="mt-5">
+  <div class="container shadow p-5">
+    <button class="btn btn-primary" (click)="openDialog()" *ngIf="user.role=='Student'">New Internship</button>
+    <div *ngIf="user.role=='Teacher'">
+      <label>Search By Name or email of student</label>
+      <input class="form-control"  (keyup)="searchByName($event)" />
+    </div>
+
+    <table class="mt-5 table table-hover bg-white">
+      <thead class="bg-primary text-white">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Post</th>
+        <th scope="col">Topic</th>
+        <th scope="col">start_date</th>
+        <th scope="col">end_date</th>
+        <th scope="col"></th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let internship of internships;let index=index;">
+        <th scope="row">{{index}}</th>
+        <td>{{internship.post}}</td>
+        <td>{{internship.topic}}</td>
+        <td>{{internship.start_date | date}} </td>
+        <td>{{internship.end_date | date}} </td>
+        <td class="d-flex justify-content-end">
+          <button class="btn-sm btn-outline-success" routerLink="/detailsInternship/{{internship.id}}">Details</button>
+          <button style="margin-left: 2%;" class="btn-sm btn-outline-danger" *ngIf="user.role=='Student'" (click)="onDelete(internship.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>

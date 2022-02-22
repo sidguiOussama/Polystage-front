@@ -1,0 +1,100 @@
+<div class="mt-5">
+  <div class="d-flex justify-content-center">
+    <h1>Company Details</h1>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="row">
+          <div class="col-md-3">
+            <label>Company Name</label>
+          </div>
+          <div class="col-md-6">
+            <label>{{this.company.name}}</label>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Speciality</label>
+        </div>
+        <div class="col-md-6">
+          <label>{{this.company.speciality}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Country</label>
+        </div>
+        <div class="col-md-6">
+          <label>{{this.company.country}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-3">
+          <label>city</label>
+        </div>
+        <div class="col-md-6">
+          <label>{{this.company.city}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <div class="row row-cols-2">
+      <div *ngFor=" let internship of internships;">
+          <div class="card rounded bg-transparent border-primary">
+              <div class="row p-3">
+                <div class="col-md-2">
+                  <label>Topic</label>
+                </div>
+                <div class="col-md-9">
+                  <h4>{{internship.topic}}</h4>
+                </div>
+              </div>
+
+            <div class="row p-3">
+              <div class="col-md-2">
+                <label>Post</label>
+              </div>
+              <div class="col-md-9">
+                <h4>{{internship.post}}</h4>
+              </div>
+            </div>
+
+            <div class="row p-3">
+              <div class="col-md-2">
+                <label>Description</label>
+              </div>
+              <div class="col-md-9">
+                <h4>{{internship.description}}</h4>
+              </div>
+            </div>
+
+            <div class="row p-3">
+              <div class="col-md-2">
+                <label>Tasks</label>
+              </div>
+              <div class="col-md-9">
+                <h4>{{internship.tasks}}</h4>
+              </div>
+            </div>
+            <div class="card-footer bg-primary mt-5">
+              <div class="row pt-3">
+                <div class="col-sm">
+                  <div class="text-center ">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>

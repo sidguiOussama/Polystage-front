@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "adsimages-9bd1a": {
+      "hosting": {
+        "poly-stage-front": [
+          "adsimages-9bd1a"
+        ]
+      }
+    }
+  }
+}

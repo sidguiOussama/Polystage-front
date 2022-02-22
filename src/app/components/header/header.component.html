@@ -1,0 +1,70 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <a class="navbar-brand">
+    PolyStage
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-skip-end-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M6.271 5.055a.5.5 0 0 1 .52.038L9.5 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+    </svg>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/internships/{{user.id}}" *ngIf="user.role=='Student'">My Internships(Student)</a>
+        <a class="nav-link" routerLink="/internships/{{user.id}}" *ngIf="user.role=='Tutor'">My Internships(Tutor)</a>
+        <a class="nav-link" routerLink="/internships/{{user.id}}" *ngIf="user.role=='Teacher'">All Internships</a>
+      </li>
+    </div>
+    <ul  class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+-->
+
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="example-sidenav" mode="side" >
+    <h1 class="text-white">PolyStage</h1>
+    <hr/>
+    <div class="text-white mt-5" *ngIf="isConnect">
+      <h3  routerLink="/internships/{{user.id}}" *ngIf="user.role=='Student'">My Internships(Student)</h3>
+      <h3  routerLink="/companies" *ngIf="user.role=='Student'">Companies</h3>
+      <h3  routerLink="/internships/{{user.id}}" *ngIf="user.role=='Tutor'">My Internships(Tutor)</h3>
+      <h3 routerLink="/internships/{{user.id}}" *ngIf="user.role=='Teacher'">All Internships</h3>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="example-sidenav-content">
+      <div class="row bg-dark">
+        <div class="col-md-6">
+          <button type="button"  class=" btn btn-dark  rounded" (click)="drawer.toggle()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+          </button>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end" *ngIf="!isConnect">
+              <a class="nav-link" routerLink="/login">Login</a>
+              <a class="nav-link" routerLink="/signup">Sign Up</a>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end" *ngIf="isConnect">
+          <a class="nav-link"  (click)="logout()">Log out</a>
+        </div>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+

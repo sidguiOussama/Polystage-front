@@ -1,0 +1,190 @@
+<div class="mt-5">
+  <div class="container">
+    <div class="card mt-3 ">
+      <div class="card-header bg-primary">
+        <h1 class=" d-flex justify-content-center">Details Internship</h1>
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-dark" *ngIf="currentUser.role=='Student'" (click)="addReport()"> Add Report</button>&nbsp;&nbsp;
+          <button class="btn btn-outline-light" (click)="goToEvalution()"> Evaluation</button>&nbsp;&nbsp;
+        </div>
+        <div *ngIf="isAddFile" class="mt-3">
+          <input type="file" class="form-control"  (change)="onFileSelected($event)"/>
+          <button (click)="valideUplaod()" class=" mt-2 btn btn-dark">Upload</button>
+        </div>
+      </div>
+      <div class="row m-3">
+        <h1>Internship Informations</h1>
+        <hr/>
+
+        <div class="col-md-6 mt-2">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">Topic : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="internship.topic" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-2">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">Post : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="internship.post" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">start_date : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="internship.start_date" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">start_date : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="internship.start_date" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">Description : </label>
+            </div>
+            <div class="col-md-8">
+              <textarea type="text" class="form-control" [(ngModel)]="internship.description" [disabled]="true"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">Tasks : </label>
+            </div>
+            <div class="col-md-8">
+              <textarea type="text" class="form-control" [(ngModel)]="internship.tasks" [disabled]="true"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row m-3">
+        <h1>Company Informations</h1>
+        <hr/>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">Company name : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="company.name" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">speciality : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="company.speciality" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">country : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="company.country" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">city : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="company.city" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">address : </label>
+            </div>
+            <div class="col-md-8">
+              <textarea type="text" class="form-control" [(ngModel)]="company.address" [disabled]="true"></textarea>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row m-3">
+        <h1>Tutor Informations</h1>
+        <hr/>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">firstname : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="tutor.firstname" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">lastname : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="tutor.lastname" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">email : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="tutor.email" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="col-form-label">phone : </label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" [(ngModel)]="tutor.phone" [disabled]="true" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

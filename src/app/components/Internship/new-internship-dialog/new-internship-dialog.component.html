@@ -1,0 +1,119 @@
+
+<mat-horizontal-stepper linear="true">
+  <mat-step label="Internship Information" >
+    <div class="form-group mt-2">
+      <label>Topic : </label>
+      <input type="text" class="form-control" [(ngModel)]="internship.topic" placeholder="Enter Title">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Description : </label>
+      <textarea type="text" class="form-control" [(ngModel)]="internship.description" placeholder="Enter description"></textarea>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Post : </label>
+      <input type="link" class="form-control" [(ngModel)]="internship.post" placeholder="Enter link">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>tasks : </label>
+      <textarea type="link" class="form-control" [(ngModel)]="internship.tasks" placeholder="Enter link"></textarea>
+    </div>
+
+    <div class="mt-5">
+      <button type="submit" class="btn btn-outline-danger pull-right" (click)="onNoClick()">Cancel</button>
+      <button mat-button matStepperNext class="btn btn-outline-success pull-right" style="margin-left: 1%;">Next</button>
+    </div>
+
+  </mat-step>
+  <mat-step label="Company Information">
+
+    <div class="form-group mt-2">
+      <label>name : </label>
+      <input type="text" class="form-control" [(ngModel)]="company.name" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>speciality : </label>
+      <input type="text" class="form-control" [(ngModel)]="company.speciality" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>country : </label>
+      <input type="text" class="form-control" [(ngModel)]="company.country" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>city : </label>
+      <input type="text" class="form-control" [(ngModel)]="company.city" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>address : </label>
+      <input type="text" class="form-control" [(ngModel)]="company.address" placeholder="Enter description">
+    </div>
+
+    <div  class="mt-5">
+      <button type="submit" class="btn btn-outline-danger pull-right" (click)="onNoClick()">Cancel</button>
+      <button mat-button matStepperPrevious class="btn btn-outline-primary pull-right" style="margin-left: 1%;">Back</button>
+      <button mat-button matStepperNext class="btn btn-outline-success pull-right" style="margin-left: 1%;">Next</button>
+    </div>
+
+  </mat-step>
+  <mat-step label="Tutor Information">
+
+
+    <div class="form-group mt-2">
+      <label>firstname : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.firstname" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>lastname : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.lastname" placeholder="Enter description">
+    </div>
+
+    <div class="form-grou mt-2">
+      <label>Email : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.email" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>phone : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.phone" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>country : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.country" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>city : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.city" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>zipCode : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.zipCode" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>address : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.address" placeholder="Enter description">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>post : </label>
+      <input type="text" class="form-control" [(ngModel)]="tutor.post" placeholder="Enter description">
+    </div>
+
+    <div class="mt-5">
+      <button type="submit" class="btn btn-outline-danger pull-right" (click)="onNoClick()">Cancel</button>
+      <button mat-button matStepperPrevious class="btn btn-outline-primary pull-right" style="margin-left: 1%;">Back</button>
+      <button type="submit" class="btn btn-outline-success pull-right" style="margin-left: 1%;" (click)="onClick()">Create</button>
+    </div>
+
+  </mat-step>
+</mat-horizontal-stepper>
